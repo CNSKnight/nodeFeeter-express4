@@ -1,0 +1,34 @@
+extends layout
+
+block header_bloc
+  style.
+    .prefix {
+        color: darkgray;
+    }
+  .row
+    form.col.s12.m6.offset-m3(action="/")
+      .row
+        .input-field.col.s6.m8
+          span.prefix @
+          input(id="handle", type="text", value=tweeter.handle, placeholder="Try @cnnbrk...")
+        .input-field.col.s6.m4.right-align
+          button(class="btn blue", type="submit") fetch
+            i.material-icons.right send
+
+block tweets_bloc
+  if tweets && tweets.length
+    style.
+      .author {
+          margin: 0;
+          line-height: 1.2rem;
+          font-size: 1rem;
+          font-style: italic;
+          color: darkgray;
+      }
+    .row
+      ul.collection
+        each tweet in tweets
+          li.collection-item
+            h3.author= '@'+tweet.user.screen_name
+            blockquote= tweet.text
+
