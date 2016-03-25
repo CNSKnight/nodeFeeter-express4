@@ -41,7 +41,7 @@ router.get('/:handle?', function(req, res, next) {
         if (! req.params.handle) {
             res.render('feeter', {title: 'Tweets Search', tweeter: {handle: ""}, tweets: {}});
         }
-        next();
+        // implicit eor here - ie no next()
 });
 
 module.exports = router;
