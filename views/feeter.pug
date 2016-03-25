@@ -6,14 +6,16 @@ block header_bloc
         color: darkgray;
     }
   .row
-    form.col.s12.m6.offset-m3(action="/")
+    form.col.s12.l8.offset-l2(action="/")
       .row
-        .input-field.col.s6.m8
+        .input-field.col.s8.m8
           span.prefix @
           input(id="handle", type="text", value=tweeter.handle, placeholder="Try @cnnbrk...")
-        .input-field.col.s6.m4.right-align
-          button(class="btn blue", type="submit") fetch
-            i.material-icons.right send
+        .input-field.col.s3.m4.right-align
+          button(class="btn blue", type="submit") 
+            span.hide-on-small-only fetch
+            i.material-icons.hide-on-med-and-up send
+            i.material-icons.right.hide-on-small-only send
 
 block tweets_bloc
   if tweets && tweets.length
