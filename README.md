@@ -6,6 +6,10 @@ An express 4 server app delivering a portion of a Twitter feed for an @screen_na
 
 *Tested with NodeJS v0.12.7*
 
+### Ensure Express Generator is installed
+    $ npm install -g express-generator
+
+#### Then
     $ git clone <repo-address> <target-dir>
     $ cd <target-dir>/
     $ npm install
